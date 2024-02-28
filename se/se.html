@@ -1,21 +1,60 @@
-<h1>ESMC</h1>
-<h3>Egyptian Smart Meters Company</h3>
-<ol>
-    <li>Code</li>
-    <li>Name</li>
-    <li>Basic Salary</li>
-    <li>Allowances</li>
-    <li>Incentive</li>
-    <li>Overtime Hours</li>
-    <li>Deducted Hours</li>
-    <li>Deducted Days</li>
-    <li>Medical Insurance</li>
-</ol>
-<ul>
-    <li>Rate/Hour</li>
-    <li>Rate/Day</li>
-    <li>Overtime Compensation</li>
-    <li>Deducted Hours</li>
-    <li>Deducted Days</li>
-    <li>Net Salary</li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>EMSC DB</title>
+    <link rel="stylesheet" href="./styles.css"/>
+</head>
+
+<body>
+<h2>ESMC  - Salary Estimate Calculator</h2>
+
+<p>Basic Salary: <input class="box" id="in1"> EGP</p>
+<p>Allowances: <input class="box" id="in2"> EGP</P>
+<p>Incentive: <input class="box" id="in3"> EGP</p>
+<p>Overtime Hours <input class="box" id="in4"> Hours</p>
+<p>Deducted Hours: <input class="box" id="in5"> Hours</p>
+<p>Deducted Days: <input class="box" id="in6"> Days</p>
+<p>Medical Insurance: <input class="box" id="in7"> EGP</p>
+
+<button onclick="add()">Calculate</button>
+
+<p>Rate Per Hour: <input class="box" id="ou1"> EGP</p>
+<p>Rate Per Day: <input class="box" id="ou2"> EGP</p>
+<p>Overtime Compensation: <input class="box" id="ou3"> EGP</p>
+<p>Deducted Hours: <input class="box" id="ou4"> EGP</p>
+<p>Deducted Days: <input class="box" id="ou5"> EGP</p>
+<p>Total Deducted: <input class="box" id="ou6"> EGP</p>
+<p>Net Salary: <input class="box" id="ou7"> EGP</p>
+
+</body>
+<script>
+    function add()
+    {
+        var nin1 = parseInt(document.getElementById("in1").value);
+        var nin2 = parseInt(document.getElementById("in2").value);
+        var nin3 = parseInt(document.getElementById("in3").value);
+        var nin4 = parseInt(document.getElementById("in4").value);
+        var nin5 = parseInt(document.getElementById("in5").value);
+        var nin6 = parseInt(document.getElementById("in6").value);
+        var nin7 = parseInt(document.getElementById("in7").value);
+
+        var nou1 = (nin1/210).toFixed(2);
+        var nou2 = (nin1/30).toFixed(2);
+        var nou3 = ((nin4)*(nin1/210)).toFixed(2);
+        var nou4 = ((nin5)*(nin1/210)).toFixed(2);
+        var nou5 = ((nin6)*(nin1/30)).toFixed(2);
+        var nou6 = ((nin5)*(nin1/210))+((nin6)*(nin1/30))+nin7;
+        var nou7 = nin1+nin2+nin3+((nin4)*(nin1/210))-nou6;
+
+        document.getElementById("ou1").value = nou1;
+        document.getElementById("ou2").value = nou2;
+        document.getElementById("ou3").value = nou3;
+        document.getElementById("ou4").value = nou4;
+        document.getElementById("ou5").value = nou5;
+        document.getElementById("ou6").value = nou6.toFixed(2);
+        document.getElementById("ou7").value = nou7.toFixed(2);
+      
+    }
+    </script>
