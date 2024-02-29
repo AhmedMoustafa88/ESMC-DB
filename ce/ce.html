@@ -8,26 +8,34 @@
 </head>
 
 <body>
-<h2>ESMC  - Salary Estimate Calculator</h2>
+<h2>ESMC  - Cost Estimate Calculator</h2>
 
 <p>Basic Salary: EGP<input class="box" id="in1"></p>
-<p>Allowances: EGP<input class="box" id="in2"></P>
+<p>Meal Allowance/Day: EGP<input class="box" id="in2"></P>
 <p>Incentive: EGP<input class="box" id="in3"></p>
-<p>Overtime Hours: <input class="box" id="in4"></p>
-<p>Deducted Hours: <input class="box" id="in5"></p>
-<p>Deducted Days: <input class="box" id="in6"></p>
+<p>Social Insurance Salary: EGP<input class="box" id="in4"></p>
+<p>Transportation Cost: EGP<input class="box" id="in5"></p>
+<p>Taxes Ratio: %<input class="box" id="in6"></p>
 <p>Medical Insurance: EGP<input class="box" id="in7"></p>
 <br>
 <button id="cal" onclick="add()">Calculate</button>
 <br>
-<p>Rate Per Hour: EGP<input class="box" id="ou1"></p>
-<p>Rate Per Day: EGP<input class="box" id="ou2"></p>
-<p>Overtime Hours: EGP<input class="box" id="ou3"></p>
-<p>Deducted Hours: EGP<input class="box" id="ou4"></p>
-<p>Deducted Days: EGP<input class="box" id="ou5"></p>
-<p>Total Deducted: EGP<input class="box" id="ou6"></p>
-<p>Net Salary: EGP<input class="box" id="ou7"></p>
+<p>Meal Allowance: EGP<input class="box" id="ou1"></p>
+<p>Net Salary: EGP<input class="box" id="ou2"></p>
+<p>Social Insurance: EGP<input class="box" id="ou3"></p>
+<p>Taxes: EGP<input class="box" id="ou4"></p>
+<p>Medical Insurance: EGP<input class="box" id="ou5"></p>
+<p>Total Overhead: EGP<input class="box" id="ou6"></p>
+<p>Total Cost: EGP<input class="box" id="ou7"></p>
 
+
+
+<ul>The above calculation is based on the below remarks
+    <li>25 workdays per month</li>
+    <li>Social insurance share is 29.75%</li>
+    <li>Medical insurance employee share is 1/3</li>
+    <li>Taxes percentage is normalized per month</li>
+</ul>
 </body>
 <script>
     function add()
@@ -40,16 +48,16 @@
         var nin6 = parseInt(document.getElementById("in6").value);
         var nin7 = parseInt(document.getElementById("in7").value);
 
-        var nou1 = (nin1/210).toFixed(2);
-        var nou2 = (nin1/30).toFixed(2);
-        var nou3 = ((nin4)*(nin1/210)).toFixed(2);
-        var nou4 = ((nin5)*(nin1/210)).toFixed(2);
-        var nou5 = ((nin6)*(nin1/30)).toFixed(2);
-        var nou6 = ((nin5)*(nin1/210))+((nin6)*(nin1/30))+nin7;
-        var nou7 = nin1+nin2+nin3+((nin4)*(nin1/210))-nou6;
+        var nou1 = nin2*25;
+        var nou2 = nin1+nin3+nou1-(nin7/3);
+        var nou3 = (nin4*0.2975).toFixed(2);
+        var nou4 = (nin1*nin6/100).toFixed(2);
+        var nou5 = (nin7*(2/3)).toFixed(2);
+        var nou6 = (nin4*0.2975)+(nin1*nin6/100)+(nin7*(2/3))+nin5;
+        var nou7 = nin1+nin3+nou1-(nin7/3)+(nin4*0.2975)+(nin1*nin6/100)+(nin7*(2/3))+nin5;
 
         document.getElementById("ou1").value = nou1;
-        document.getElementById("ou2").value = nou2;
+        document.getElementById("ou2").value = nou2.toFixed(2);
         document.getElementById("ou3").value = nou3;
         document.getElementById("ou4").value = nou4;
         document.getElementById("ou5").value = nou5;
