@@ -2,4 +2,9 @@ body {background-color: rgb(179, 182, 185);}
 
  .box{width: 100px;
 position: absolute ;
-left: 170px;}
+left: 170px;
+text-align: right;
+font-weight:bold ;
+}
+
+p{}
