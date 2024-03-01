@@ -1,3 +1,4 @@
+/*
 var user1="Ahmed";
 var pass1=2472021;
 var username=prompt('Please Enter Username:',' ');
@@ -15,3 +16,4 @@ else {
   alert("Wrong Password");
   window.location="wrongpassword.html";
 }
+*/
