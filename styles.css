@@ -1,9 +1,26 @@
 body {background-color: rgb(179, 182, 185);}
+
+.header1{
+    margin-bottom: 0px;
+    margin-top: 0px;}   
+
 h1{color: rgb(197, 148, 56);
     margin-top: 0px;
     font-size: 20pt;
     margin-bottom: 0px;}
-.exportlist{color:rgb(239, 12, 12)}
+
+h3{color: rgb(195, 114, 21);
+    margin-top: 0px;
+    font-size: 15pt;
+    margin-bottom: 0px;}
+
+h4{color: rgb(197, 56, 56);
+    margin-top: 20px;
+    font-size: 15pt;
+    margin-bottom: 0px;}
+
+ol{margin-top: 0px;}    
+
 #esmclogo {
     margin-bottom: 20px;
     width: 190px;
@@ -11,6 +28,5 @@ h1{color: rgb(197, 148, 56);
     top: 0px;
     right: 0px;}
 
-.header1{
-    margin-bottom: 0px;
-    margin-top: 0px;}   
+footer{margin: 0px;
+padding: 0px;}    
