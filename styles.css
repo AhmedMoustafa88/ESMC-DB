@@ -4,26 +4,30 @@ body {background-color: rgb(179, 182, 185);}
     margin-bottom: 0px;
     margin-top: 0px;}   
 
-h1{color: rgb(197, 148, 56);
+h1{color: rgb(207, 136, 5);
     margin-top: 0px;
-    font-size: 20pt;
-    margin-bottom: 0px;}
-
-h3{color: rgb(195, 114, 21);
-    margin-top: 0px;
-    font-size: 15pt;
+    font-size: 20pt; 
     margin-bottom: 0px;}
 
 h4{color: rgb(197, 56, 56);
     margin-top: 20px;
     font-size: 15pt;
-    margin-bottom: 0px;}
+    margin-bottom: 10px;
+    text-decoration: underline;}    
+
+h3{color: rgb(39, 39, 43);
+    margin-top: 0px;
+    font-size: 15pt;
+    margin-bottom: 10px;
+    text-decoration: underline;}
+
+
 
 ol{margin-top: 0px;}    
 
 #esmclogo {
     margin-bottom: 20px;
-    width: 190px;
+    width: 205px;
     position: absolute;
     top: 0px;
     right: 0px;}
